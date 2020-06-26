@@ -3,6 +3,7 @@ import "./HomePage.css";
 import Axios from "axios";
 import { appendApiKey, colors } from "../utils";
 import Genre from "./Genre";
+import Loader from "./Loader";
 
 const HomePage = () => {
 
@@ -46,7 +47,7 @@ const HomePage = () => {
             <h3 className="text-left">Browse Category</h3>
             <hr />
             {
-              isLoading ? ( <div class="loader mt-5 mx-auto"></div> ): 
+              isLoading ? <Loader /> : 
               genres && genres.length > 0 ? genres.map(genre => <Genre 
                   key={genre.list_name_encoded} 
                   genre={genre}
