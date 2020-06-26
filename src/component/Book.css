@@ -1,3 +1,7 @@
 .Book {
-  
+  box-shadow: #ddd 1px 3px 5px 2px;
+}
+
+.Book p.book-description {
+  font-size: 0.9rem;
 }

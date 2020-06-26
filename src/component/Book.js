@@ -13,12 +13,12 @@ const Book = ({book}) => {
       <div className="col-8">
         <div className="card-body text-left">
           <h5 className="card-title text-dark mb-0">{book.title}</h5>
-          <p className="card-text">
+          <p className="card-text mb-2">
             <small className="text-info">
               {book.author}
             </small>
           </p>
-          <p className="card-text">
+          <p className="card-text book-description">
             {book.description}
           </p>
           {
