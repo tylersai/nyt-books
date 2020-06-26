@@ -4,6 +4,7 @@ import Axios from "axios";
 import { appendApiKey, colors } from "../utils";
 import Genre from "./Genre";
 import Loader from "./Loader";
+import NoData from "./NoData";
 
 const HomePage = () => {
 
@@ -52,7 +53,7 @@ const HomePage = () => {
                   key={genre.list_name_encoded} 
                   genre={genre}
                   bgColor={colors[Math.floor(Math.random() * colors.length)]}
-                  />) : <h4 className="mt-5">NO DATA</h4>
+                  />) : <NoData />
               
             }
           </div>
