@@ -2,4 +2,12 @@
   width: 150px;
   height: 150px;
   border: 1px solid #eee;
+  border-radius: 20px;
+}
+
+.Genre.shadow {
+  transition: all 200ms 50ms ease-out;
+}
+.Genre.shadow:hover {
+  box-shadow: none !important;
 }
