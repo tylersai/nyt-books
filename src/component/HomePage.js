@@ -11,11 +11,12 @@ const HomePage = () => {
   const fetchGenres = async () => {
     const link = appendApiKey("/lists/names.json");
     try {
-      [].slice()
       const res = await Axios.get(link);
       const genArr = res.data.results;
       if(genArr && genArr.length > 0){
         setGenres(genArr.slice(genArr.length-1-20, genArr.length-1));
+      } else {
+        setGenres([]);
       }
     } catch (error) {
       console.log(error);

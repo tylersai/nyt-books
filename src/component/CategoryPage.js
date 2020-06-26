@@ -1,31 +1,36 @@
 import React, {useState, useEffect} from "react";
 import "./CategoryPage.css";
 import Axios from "axios";
-import { appendApiKey, colors } from "../utils";
-import Genre from "./Genre";
+import { appendApiKey } from "../utils";
+import Book from "./Book";
 
 const CategoryPage = ({match}) => {
 
-  const [genres, setGenres] = useState([]);
+  const [books, setBooks] = useState([]);
+  const [catTitle, setCatTitle] = useState("");
 
-  const fetchGenres = async () => {
-    const link = appendApiKey("/lists/names.json");
+  const fetchBooks = async (id) => {
+    const link = appendApiKey(`/lists/current/${id}.json`);
     try {
-      [].slice()
       const res = await Axios.get(link);
-      const genArr = res.data.results;
-      if(genArr && genArr.length > 0){
-        setGenres(genArr.slice(genArr.length-1-20, genArr.length-1));
+      if(res.data.results && res.data.results.books && res.data.results.books.length > 0){
+        const bookArr = res.data.results.books;
+        setCatTitle(res.data.results.display_name);
+        setBooks(bookArr);
+      } else {
+        setCatTitle("");
+        setBooks([]);
       }
     } catch (error) {
       console.log(error);
-      setGenres([]);
+      setCatTitle("");
+      setBooks([]);
     }
   };
 
   useEffect(() => {
-    //fetchGenres();
-  }, []);
+    fetchBooks(match.params.id);
+  }, [match.params.id]);
 
   return (
     <div className="CategoryPage">
@@ -35,12 +40,20 @@ const CategoryPage = ({match}) => {
             <h2 className="mt-3 mb-5">New York Times Best Sellers</h2>
           </div>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-md-10">
-            <h3 className="text-left">Category Page {match.params.id}</h3>
-            <hr />
-          </div>
-        </div>
+        {
+          catTitle && (
+            <div className="row justify-content-center">
+              <div className="col-md-10">
+                <h3 className="text-left">{catTitle}</h3>
+                <hr />
+                {
+                  books.map(book => <Book key={book.rank} book={book}/>)
+                }
+              </div>
+            </div>
+          )
+        }
+        
       </div>
     </div>
   )
