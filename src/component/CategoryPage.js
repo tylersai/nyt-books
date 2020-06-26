@@ -5,6 +5,7 @@ import { appendApiKey } from "../utils";
 import Book from "./Book";
 import Loader from "./Loader";
 import NoData from "./NoData";
+import BreadCrumb from "./BreadCrumb";
 
 const CategoryPage = ({match}) => {
 
@@ -52,8 +53,7 @@ const CategoryPage = ({match}) => {
           books && books.length>0 ? (
             <div className="row justify-content-center">
               <div className="col-md-10">
-                <h3 className="text-left">{catTitle}</h3>
-                <hr />
+                <BreadCrumb catTitle={catTitle} />
                 {
                   books.map(book => <Book key={book.primary_isbn13} book={book}/>)
                 }
