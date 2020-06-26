@@ -1,0 +1,1 @@
+export const appendApiKey = link => `${link}?api-key=${process.env.REACT_APP_API_KEY}`;
