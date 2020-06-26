@@ -47,7 +47,7 @@ const CategoryPage = ({match}) => {
                 <h3 className="text-left">{catTitle}</h3>
                 <hr />
                 {
-                  books.map(book => <Book key={book.rank} book={book}/>)
+                  books.map(book => <Book key={book.primary_isbn13} book={book}/>)
                 }
               </div>
             </div>
