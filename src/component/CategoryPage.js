@@ -37,7 +37,7 @@ const CategoryPage = ({match}) => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">
-            <h2 className="mt-3 mb-5">New York Times Best Sellers</h2>
+            <h2 className="mt-3 mb-5 text-dark">New York Times Best Sellers</h2>
           </div>
         </div>
         {
