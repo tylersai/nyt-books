@@ -5,7 +5,7 @@ const Book = ({book}) => {
 
   return (
   <div className="Book d-inline-block card m-3 bg-light" 
-    style={{maxWidth : "450px"}}>
+    style={{width : "450px", maxWidth : "450px"}}>
     <div className="row no-gutters">
       <div className="col-4">
         <img src={book.book_image} className="card-img" alt="BookImg"/>
