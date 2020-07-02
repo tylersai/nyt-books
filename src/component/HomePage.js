@@ -47,15 +47,17 @@ const HomePage = () => {
           <div className="col-md-10">
             <h3 className="text-left">Browse Category</h3>
             <hr />
-            {
-              isLoading ? <Loader /> : 
-              genres && genres.length > 0 ? genres.map(genre => <Genre 
-                  key={genre.list_name_encoded} 
-                  genre={genre}
-                  bgColor={colors[Math.floor(Math.random() * colors.length)]}
-                  />) : <NoData />
-              
-            }
+            <div className="d-flex justify-content-center flex-wrap">
+              {
+                isLoading ? <Loader /> : 
+                genres && genres.length > 0 ? genres.map(genre => <Genre 
+                    key={genre.list_name_encoded} 
+                    genre={genre}
+                    bgColor={colors[Math.floor(Math.random() * colors.length)]}
+                    />) : <NoData />
+                
+              }
+            </div>
           </div>
         </div>
       </div>
