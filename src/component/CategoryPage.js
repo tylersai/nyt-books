@@ -54,9 +54,11 @@ const CategoryPage = ({match}) => {
             <div className="row justify-content-center">
               <div className="col-md-10">
                 <BreadCrumb catTitle={catTitle} />
-                {
-                  books.map(book => <Book key={book.primary_isbn13} book={book}/>)
-                }
+                <div className="d-flex justify-content-center flex-wrap">
+                  {
+                    books.map(book => <Book key={book.primary_isbn13} book={book}/>)
+                  }
+                </div>
               </div>
             </div>
           ) : <NoData />
