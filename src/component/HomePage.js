@@ -19,7 +19,7 @@ const HomePage = () => {
       const genArr = res.data.results;
       if(genArr && genArr.length > 0){
         setIsLoading(false);
-        setGenres(genArr.slice(genArr.length-1-20, genArr.length-1));
+        setGenres(genArr.slice(genArr.length-1-24, genArr.length-1));
       } else {
         setIsLoading(false);
         setGenres([]);
