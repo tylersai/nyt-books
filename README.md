@@ -1,4 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# New York Times Best Selling Books
+
+A simple website that lists current best selling books according to New York Times data built with React.
+
+## Configuration
+
+Clone this repository, create a `.env` file in the root directory and add the following credentials:<br/>
+`REACT_APP_END_POINT=https://api.nytimes.com/svc/books/v3`<br/>
+`REACT_APP_API_KEY=<YOUR_API_KEY>`
+
 
 ## Available Scripts
 
