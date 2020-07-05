@@ -6,6 +6,7 @@ import Book from "./Book";
 import Loader from "./Loader";
 import NoData from "./NoData";
 import BreadCrumb from "./BreadCrumb";
+import Title from "./Title";
 
 const CategoryPage = ({match}) => {
 
@@ -43,11 +44,7 @@ const CategoryPage = ({match}) => {
   return (
     <div className="CategoryPage">
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-12">
-            <h2 className="mt-3 mb-5 text-dark">New York Times Best Sellers</h2>
-          </div>
-        </div>
+        <Title />
         {
           isLoading ? <Loader /> :
           books && books.length>0 ? (

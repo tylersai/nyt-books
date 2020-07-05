@@ -5,6 +5,7 @@ import { appendApiKey, colors } from "../utils";
 import Genre from "./Genre";
 import Loader from "./Loader";
 import NoData from "./NoData";
+import Title from "./Title";
 
 const HomePage = () => {
 
@@ -40,11 +41,7 @@ const HomePage = () => {
   return (
     <div className="HomePage">
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-12">
-            <h2 className="mt-3 mb-5 text-dark">New York Times Best Sellers</h2>
-          </div>
-        </div>
+        <Title />
         <div className="row justify-content-center">
           <div className="col-md-10">
             <h3 className="text-left">Browse Category</h3>
