@@ -35,6 +35,8 @@ const HomePage = () => {
     fetchGenres();
   }, []);
 
+  const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+
   return (
     <div className="HomePage">
       <div className="container-fluid">
@@ -53,9 +55,8 @@ const HomePage = () => {
                 genres && genres.length > 0 ? genres.map(genre => <Genre 
                     key={genre.list_name_encoded} 
                     genre={genre}
-                    bgColor={colors[Math.floor(Math.random() * colors.length)]}
+                    bgColor={getRandomColor()}
                     />) : <NoData />
-                
               }
             </div>
           </div>
