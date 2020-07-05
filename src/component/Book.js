@@ -1,5 +1,6 @@
 import React from "react";
 import "./Book.css";
+import { Link } from "react-router-dom";
 
 const Book = ({book}) => {
 
@@ -12,7 +13,7 @@ const Book = ({book}) => {
       </div>
       <div className="col-8">
         <div className="card-body text-left">
-          <h5 className="card-title text-dark mb-0">{book.title}</h5>
+          <h5 className="card-title text-dark mb-0"><Link className="text-dark" to={`/book/${book.primary_isbn13}`}>{book.title}</Link></h5>
           <p className="card-text mb-2">
             <small className="text-info">
               {book.author}

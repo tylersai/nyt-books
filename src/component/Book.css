@@ -5,3 +5,12 @@
 .Book p.book-description {
   font-size: 0.9rem;
 }
+
+.Book .card-title a {
+  transition: all 150ms 50ms ease-out;
+  text-decoration: none;
+}
+
+.Book .card-title a:hover {
+  color: var(--blue) !important;
+}
