@@ -1,6 +1,7 @@
 # New York Times Best Selling Books
 
-A simple website that lists current best selling books according to New York Times data built with React.
+A simple website that lists current best selling books according to New York Times data built with React.<br/>
+Live Demo: [https://nytbestsellers.netlify.app/](https://nytbestsellers.netlify.app/)
 
 ## Configuration
 
